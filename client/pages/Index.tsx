@@ -111,12 +111,7 @@ export default function Index() {
                 <Moon className="w-5 h-5" />
               )}
             </button>
-            <a
-              href="#"
-              className="px-4 py-2 border border-accent text-accent hover:bg-accent hover:text-accent-foreground rounded transition-colors text-sm font-medium"
-            >
-              Resume
-            </a>
+
           </div>
           {/* Mobile dark mode toggle */}
           <button
@@ -150,8 +145,9 @@ export default function Index() {
             </h2>
             <p className="max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed pt-4">
               I'm a full-stack developer passionate about creating beautiful and
-              functional web applications. Currently focused on full-stack
-              development with React, Node.js, and modern web technologies.
+              functional web and desktop applications. Currently focused on
+              full-stack development with React, Node.js, and modern web
+              technologies.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-8">
               <button
@@ -325,7 +321,9 @@ export default function Index() {
                       <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </a>
                     <a
-                      href="#"
+                      href="https://github.com/Kiro2-3"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors font-medium group"
                     >
                       GitHub
