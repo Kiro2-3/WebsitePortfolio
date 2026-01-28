@@ -314,14 +314,16 @@ export default function Index() {
                   </div>
                   <div className="flex gap-6 pt-4">
                     <a
-                      href="#"
+                      href="https://youtu.be/XdK7nYHkymE"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors font-medium group"
                     >
-                      Live Site
+                      System Demo
                       <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </a>
                     <a
-                      href="https://github.com/Kiro2-3"
+                      href="https://github.com/Kiro2-3?tab=overview&from=2026-01-01&to=2026-01-29"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors font-medium group"
@@ -356,16 +358,11 @@ export default function Index() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="mailto:rockypenamantejr23@gmail.com"
+              target="_blank"
               className="inline-flex items-center gap-2 px-8 py-3 bg-accent text-accent-foreground hover:bg-accent/90 rounded transition-colors font-medium"
             >
               <Mail className="w-5 h-5" />
               Send me an email
-            </a>
-            <a
-              href="#"
-              className="px-8 py-3 border border-accent text-accent hover:bg-accent hover:text-accent-foreground rounded transition-colors font-medium"
-            >
-              Download Resume
             </a>
           </div>
 
