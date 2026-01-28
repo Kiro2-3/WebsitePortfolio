@@ -54,6 +54,14 @@ export default function Index() {
       tags: ["React", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS"],
       images: projectImages,
     },
+    {
+      title: "Colegio De Montalban Payroll System",
+      description:
+        "A comprehensive payroll management system designed for educational institutions. Built with React, TypeScript, Node.js, and PostgreSQL. Features include employee payroll processing, salary management, tax calculations, attendance tracking, and financial reporting.",
+      tags: ["React", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS"],
+      video: "https://cdn.builder.io/o/assets%2Fd0b7126990a54b5caf24622e30c00bac%2Ffd142cec29e14f2081a3ddf8a0d00316?alt=media&token=d072f471-6248-4e3d-ba94-7fe2207a70f6&apiKey=d0b7126990a54b5caf24622e30c00bac",
+      github: "https://github.com/Kiro2-3/CDM-Payroll-System",
+    },
   ];
 
   const skills = [
