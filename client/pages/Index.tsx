@@ -231,7 +231,7 @@ export default function Index() {
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold mb-16 text-primary">
-            <span className="text-accent">02.</span> Work
+            <span className="text-accent">02.</span> Work & Experience's
           </h2>
 
           <div className="space-y-20">
