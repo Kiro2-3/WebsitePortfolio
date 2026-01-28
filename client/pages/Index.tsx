@@ -333,26 +333,30 @@ export default function Index() {
                     ))}
                   </div>
                   <div className="flex gap-6 pt-4">
+                    {index === 0 && (
+                      <>
+                        <a
+                          href="https://youtu.be/XdK7nYHkymE"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors font-medium group"
+                        >
+                          System Demo
+                          <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </a>
+                        <a
+                          href="https://alphafitnesscenter.vercel.app/services"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors font-medium group"
+                        >
+                          Website Link
+                          <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </a>
+                      </>
+                    )}
                     <a
-                      href="https://youtu.be/XdK7nYHkymE"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors font-medium group"
-                    >
-                      System Demo
-                      <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </a>
-                    <a
-                      href="https://alphafitnesscenter.vercel.app/services"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors font-medium group"
-                    >
-                      Website Link
-                      <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </a>
-                    <a
-                      href="https://github.com/Kiro2-3?tab=overview&from=2026-01-01&to=2026-01-29"
+                      href={project.github || "https://github.com/Kiro2-3?tab=overview&from=2026-01-01&to=2026-01-29"}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors font-medium group"
