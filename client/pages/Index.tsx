@@ -183,8 +183,9 @@ export default function Index() {
               <p className="text-muted-foreground leading-relaxed">
                 Hello! I'm a full-stack developer with a passion for creating
                 beautiful and functional web applications. My interest in web
-                development started in 2019, and since then I've had the
-                privilege of working at startups and tech companies.
+                development started in 2023, and since then I've had the
+                privilege of working at Business Process Outsourcing and Tech
+                Companies.
               </p>
 
               <p className="text-muted-foreground leading-relaxed">
@@ -323,6 +324,15 @@ export default function Index() {
                       <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </a>
                     <a
+                      href="https://alphafitnesscenter.vercel.app/services"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors font-medium group"
+                    >
+                      Website Link
+                      <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </a>
+                    <a
                       href="https://github.com/Kiro2-3?tab=overview&from=2026-01-01&to=2026-01-29"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -378,16 +388,7 @@ export default function Index() {
               <Github className="w-6 h-6" />
             </a>
             <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-accent transition-colors"
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="w-6 h-6" />
-            </a>
-            <a
-              href="mailto:hello@example.com"
+              href="mailto:rockypenamantejr23@gmail.com"
               className="text-muted-foreground hover:text-accent transition-colors"
               aria-label="Email"
             >
