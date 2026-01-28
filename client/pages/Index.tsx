@@ -355,7 +355,7 @@ export default function Index() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="mailto:hello@example.com"
+              href="mailto:rockypenamantejr23@gmail.com"
               className="inline-flex items-center gap-2 px-8 py-3 bg-accent text-accent-foreground hover:bg-accent/90 rounded transition-colors font-medium"
             >
               <Mail className="w-5 h-5" />
@@ -404,7 +404,7 @@ export default function Index() {
       <footer className="relative w-full border-t border-border py-12 bg-muted/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-muted-foreground text-sm">
-            Designed & Built by Brittany Chiang | Built with React, Vite &
+            Designed & Built by Penamante Rocky | Built with React, Vite &
             Tailwind CSS
           </p>
         </div>
