@@ -3,6 +3,7 @@ import { ExternalLink, Github, Mail, Linkedin, Moon, Sun, Code2, Database, Cpu, 
 
 export default function Index() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isWindowFocused, setIsWindowFocused] = useState(true);
   const [isDark, setIsDark] = useState(() => {
     // Check localStorage first, then check system preference
     const saved = localStorage.getItem("theme");
