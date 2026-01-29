@@ -142,4 +142,12 @@
   .link-underline:hover::after {
     @apply w-full;
   }
+
+  .media-zoom {
+    @apply transition-transform duration-300 ease-out cursor-pointer;
+  }
+
+  .media-zoom:hover {
+    @apply scale-105;
+  }
 }
