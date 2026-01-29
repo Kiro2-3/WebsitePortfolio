@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ExternalLink, Github, Mail, Linkedin, Moon, Sun } from "lucide-react";
+import { ExternalLink, Github, Mail, Linkedin, Moon, Sun, Code2, Database, Cpu, Leaf } from "lucide-react";
 
 export default function Index() {
   const [isScrolled, setIsScrolled] = useState(false);
