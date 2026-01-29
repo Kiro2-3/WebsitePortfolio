@@ -255,7 +255,7 @@ export default function Index() {
                 <img
                   src="https://cdn.builder.io/api/v1/image/assets%2F458bc5ee9abe4ac0a100b512a7fa3aaa%2F55ea529b172a40d0a44be3c5bab8f31e"
                   alt="Profile"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover media-zoom"
                 />
               </div>
             </div>
