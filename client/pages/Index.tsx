@@ -70,6 +70,14 @@ export default function Index() {
       video: "https://cdn.builder.io/o/assets%2Fd0b7126990a54b5caf24622e30c00bac%2Fcb6630cd4e2e4d4e9572fde1a3603984?alt=media&token=74192056-4437-4d04-8f94-2c8289effbf6&apiKey=d0b7126990a54b5caf24622e30c00bac",
       github: "https://github.com/Kiro2-3/Project-C-Solo-d/commit/a074c6170bbcc9f8dacd68bb4b219e6690bfc523",
     },
+    {
+      title: "Pizza Menu",
+      description:
+        "A pizza menu application built with Microsoft CLR C++ language. Demonstrates object-oriented programming and user interface design using C++.",
+      tags: ["C++"],
+      video: "https://cdn.builder.io/o/assets%2Fd0b7126990a54b5caf24622e30c00bac%2F20bd42884c444cbe89a1cd560bde207d?alt=media&token=016f177b-b74b-411d-bc79-ef634cb6bc61&apiKey=d0b7126990a54b5caf24622e30c00bac",
+      github: "https://github.com/Kiro2-3/PizzaMenu.C",
+    },
   ];
 
   const skills = [
