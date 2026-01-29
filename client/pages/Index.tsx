@@ -75,9 +75,9 @@ export default function Index() {
   const skills = [
     "JavaScript",
     "TypeScript",
-    "React",
+    "MySQL",
     "Node.js",
-    "Express",
+    "C++",
     "Tailwind CSS",
     "PostgreSQL",
     "Git",
