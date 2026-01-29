@@ -62,6 +62,13 @@ export default function Index() {
       video: "https://cdn.builder.io/o/assets%2Fd0b7126990a54b5caf24622e30c00bac%2Ffd142cec29e14f2081a3ddf8a0d00316?alt=media&token=d072f471-6248-4e3d-ba94-7fe2207a70f6&apiKey=d0b7126990a54b5caf24622e30c00bac",
       github: "https://github.com/Kiro2-3/CDM-Payroll-System",
     },
+    {
+      title: "C++ First Year Final Project",
+      description:
+        "This system is made with C++ only alone.",
+      tags: ["C++"],
+      github: "https://github.com/Kiro2-3/Project-C-Solo-d/commit/a074c6170bbcc9f8dacd68bb4b219e6690bfc523",
+    },
   ];
 
   const skills = [
