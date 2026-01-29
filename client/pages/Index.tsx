@@ -292,7 +292,7 @@ export default function Index() {
                           <img
                             src={project.images[currentImageIndex]}
                             alt={`${project.title} - Screenshot ${currentImageIndex + 1}`}
-                            className="w-full h-auto object-cover"
+                            className="w-full h-auto object-cover media-zoom"
                           />
 
                           {/* Slideshow Controls */}
