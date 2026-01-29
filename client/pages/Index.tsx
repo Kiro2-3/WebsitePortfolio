@@ -283,7 +283,7 @@ export default function Index() {
                       {project.video ? (
                         <video
                           src={project.video}
-                          className="w-full h-auto object-cover"
+                          className="w-full h-auto object-cover media-zoom"
                           controls
                           muted
                         />
