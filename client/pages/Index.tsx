@@ -91,6 +91,19 @@ export default function Index() {
     "Git",
   ];
 
+  const skillIcons: { [key: string]: React.ReactNode } = {
+    JavaScript: <Code2 className="w-4 h-4" />,
+    TypeScript: <Code2 className="w-4 h-4" />,
+    React: <Code2 className="w-4 h-4" />,
+    "Node.js": <Database className="w-4 h-4" />,
+    Express: <Database className="w-4 h-4" />,
+    MySQL: <Database className="w-4 h-4" />,
+    PostgreSQL: <Database className="w-4 h-4" />,
+    "C++": <Cpu className="w-4 h-4" />,
+    "Tailwind CSS": <Leaf className="w-4 h-4" />,
+    Git: <Code2 className="w-4 h-4" />,
+  };
+
   return (
     <div className="bg-background text-foreground">
       {/* Header */}
