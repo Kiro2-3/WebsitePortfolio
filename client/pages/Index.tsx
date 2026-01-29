@@ -241,8 +241,9 @@ export default function Index() {
                 {skills.map((skill) => (
                   <div
                     key={skill}
-                    className="flex items-center text-muted-foreground before:content-['▸'] before:text-accent before:mr-3 before:text-lg"
+                    className="flex items-center gap-2 text-muted-foreground"
                   >
+                    <span className="text-accent">{skillIcons[skill]}</span>
                     {skill}
                   </div>
                 ))}
