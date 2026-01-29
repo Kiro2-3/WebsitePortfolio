@@ -254,72 +254,74 @@ export default function Index() {
             {projects.map((project, index) => (
               <div key={index} className="space-y-8">
                 {/* Media Section - Image Slideshow or Video */}
-                <div className="space-y-4">
-                  <div className="relative w-full bg-muted rounded-lg overflow-hidden border border-accent/20">
-                    {project.video ? (
-                      <video
-                        src={project.video}
-                        className="w-full h-auto object-cover"
-                        controls
-                        muted
-                      />
-                    ) : (
-                      <>
-                        <img
-                          src={project.images[currentImageIndex]}
-                          alt={`${project.title} - Screenshot ${currentImageIndex + 1}`}
+                {(project.video || project.images) && (
+                  <div className="space-y-4">
+                    <div className="relative w-full bg-muted rounded-lg overflow-hidden border border-accent/20">
+                      {project.video ? (
+                        <video
+                          src={project.video}
                           className="w-full h-auto object-cover"
+                          controls
+                          muted
                         />
+                      ) : (
+                        <>
+                          <img
+                            src={project.images[currentImageIndex]}
+                            alt={`${project.title} - Screenshot ${currentImageIndex + 1}`}
+                            className="w-full h-auto object-cover"
+                          />
 
-                        {/* Slideshow Controls */}
-                        <div className="absolute bottom-4 left-0 right-0 flex items-center justify-center gap-2">
-                          <button
-                            onClick={() =>
-                              setCurrentImageIndex(
-                                currentImageIndex === 0
-                                  ? project.images.length - 1
-                                  : currentImageIndex - 1,
-                              )
-                            }
-                            className="px-3 py-1 bg-accent/80 hover:bg-accent text-accent-foreground rounded text-sm font-medium transition-colors"
-                          >
-                            ← Previous
-                          </button>
-                          <div className="flex gap-2">
-                            {project.images.map((_, imgIndex) => (
-                              <button
-                                key={imgIndex}
-                                onClick={() => setCurrentImageIndex(imgIndex)}
-                                className={`w-2 h-2 rounded-full transition-all ${
-                                  imgIndex === currentImageIndex
-                                    ? "bg-accent w-6"
-                                    : "bg-accent/50 hover:bg-accent/70"
-                                }`}
-                              />
-                            ))}
+                          {/* Slideshow Controls */}
+                          <div className="absolute bottom-4 left-0 right-0 flex items-center justify-center gap-2">
+                            <button
+                              onClick={() =>
+                                setCurrentImageIndex(
+                                  currentImageIndex === 0
+                                    ? project.images.length - 1
+                                    : currentImageIndex - 1,
+                                )
+                              }
+                              className="px-3 py-1 bg-accent/80 hover:bg-accent text-accent-foreground rounded text-sm font-medium transition-colors"
+                            >
+                              ← Previous
+                            </button>
+                            <div className="flex gap-2">
+                              {project.images.map((_, imgIndex) => (
+                                <button
+                                  key={imgIndex}
+                                  onClick={() => setCurrentImageIndex(imgIndex)}
+                                  className={`w-2 h-2 rounded-full transition-all ${
+                                    imgIndex === currentImageIndex
+                                      ? "bg-accent w-6"
+                                      : "bg-accent/50 hover:bg-accent/70"
+                                  }`}
+                                />
+                              ))}
+                            </div>
+                            <button
+                              onClick={() =>
+                                setCurrentImageIndex(
+                                  currentImageIndex === project.images.length - 1
+                                    ? 0
+                                    : currentImageIndex + 1,
+                                )
+                              }
+                              className="px-3 py-1 bg-accent/80 hover:bg-accent text-accent-foreground rounded text-sm font-medium transition-colors"
+                            >
+                              Next →
+                            </button>
                           </div>
-                          <button
-                            onClick={() =>
-                              setCurrentImageIndex(
-                                currentImageIndex === project.images.length - 1
-                                  ? 0
-                                  : currentImageIndex + 1,
-                              )
-                            }
-                            className="px-3 py-1 bg-accent/80 hover:bg-accent text-accent-foreground rounded text-sm font-medium transition-colors"
-                          >
-                            Next →
-                          </button>
-                        </div>
 
-                        {/* Image Counter */}
-                        <div className="absolute top-4 right-4 bg-background/80 backdrop-blur-sm text-foreground px-3 py-1 rounded text-sm font-medium">
-                          {currentImageIndex + 1} / {project.images.length}
-                        </div>
-                      </>
-                    )}
+                          {/* Image Counter */}
+                          <div className="absolute top-4 right-4 bg-background/80 backdrop-blur-sm text-foreground px-3 py-1 rounded text-sm font-medium">
+                            {currentImageIndex + 1} / {project.images.length}
+                          </div>
+                        </>
+                      )}
+                    </div>
                   </div>
-                </div>
+                )}
 
                 {/* Project Details */}
                 <div className="space-y-4">
