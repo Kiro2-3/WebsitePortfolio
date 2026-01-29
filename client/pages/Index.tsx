@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { ExternalLink, Github, Mail, Linkedin, Moon, Sun } from "lucide-react";
+import { ExternalLink, Github, Mail, Linkedin, Moon, Sun, Code2, Database, Cpu, Leaf } from "lucide-react";
 
 export default function Index() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isWindowFocused, setIsWindowFocused] = useState(true);
   const [isDark, setIsDark] = useState(() => {
     // Check localStorage first, then check system preference
     const saved = localStorage.getItem("theme");
@@ -27,6 +28,19 @@ export default function Index() {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleFocus = () => setIsWindowFocused(true);
+    const handleBlur = () => setIsWindowFocused(false);
+
+    window.addEventListener("focus", handleFocus);
+    window.addEventListener("blur", handleBlur);
+
+    return () => {
+      window.removeEventListener("focus", handleFocus);
+      window.removeEventListener("blur", handleBlur);
+    };
   }, []);
 
   const scrollToSection = (elementId: string) => {
@@ -54,21 +68,88 @@ export default function Index() {
       tags: ["React", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS"],
       images: projectImages,
     },
+    {
+      title: "Colegio De Montalban Payroll System",
+      description:
+        "A comprehensive payroll management system designed for educational institutions. Built with React, TypeScript, Node.js, and PostgreSQL. Features include employee payroll processing, salary management, tax calculations, attendance tracking, and financial reporting.",
+      tags: ["VB.Net", "MySQL"],
+      video: "https://cdn.builder.io/o/assets%2Fd0b7126990a54b5caf24622e30c00bac%2Ffd142cec29e14f2081a3ddf8a0d00316?alt=media&token=d072f471-6248-4e3d-ba94-7fe2207a70f6&apiKey=d0b7126990a54b5caf24622e30c00bac",
+      github: "https://github.com/Kiro2-3/CDM-Payroll-System",
+    },
+    {
+      title: "Magenta Gamex",
+      description:
+        "A static website with Html and Css only.",
+      tags: ["HTML", "CSS"],
+      video: "https://cdn.builder.io/o/assets%2Fd0b7126990a54b5caf24622e30c00bac%2F3bf29a3aeeed417d9b1cd6ece846b06b?alt=media&token=2808f43f-6655-4fc8-9615-034fc95c2840&apiKey=d0b7126990a54b5caf24622e30c00bac",
+      github: "https://github.com/Kiro2-3/Magenta-Gamex",
+    },
+    {
+      title: "C++ First Year Final Project",
+      description:
+        "This system is made with C++ only.",
+      tags: ["C++"],
+      video: "https://cdn.builder.io/o/assets%2Fd0b7126990a54b5caf24622e30c00bac%2Fcb6630cd4e2e4d4e9572fde1a3603984?alt=media&token=74192056-4437-4d04-8f94-2c8289effbf6&apiKey=d0b7126990a54b5caf24622e30c00bac",
+      github: "https://github.com/Kiro2-3/Project-C-Solo-d/commit/a074c6170bbcc9f8dacd68bb4b219e6690bfc523",
+    },
+    {
+      title: "Pizza Menu",
+      description:
+        "A pizza menu application built with Microsoft CLR C++ language. Demonstrates object-oriented programming and user interface design using C++.",
+      tags: ["C++"],
+      video: "https://cdn.builder.io/o/assets%2Fd0b7126990a54b5caf24622e30c00bac%2F20bd42884c444cbe89a1cd560bde207d?alt=media&token=016f177b-b74b-411d-bc79-ef634cb6bc61&apiKey=d0b7126990a54b5caf24622e30c00bac",
+      github: "https://github.com/Kiro2-3/PizzaMenu.C",
+    },
   ];
 
   const skills = [
     "JavaScript",
     "TypeScript",
-    "React",
+    "MySQL",
     "Node.js",
-    "Express",
+    "C++",
     "Tailwind CSS",
     "PostgreSQL",
     "Git",
   ];
 
+  const skillIcons: { [key: string]: React.ReactNode } = {
+    JavaScript: <Code2 className="w-4 h-4" />,
+    TypeScript: <Code2 className="w-4 h-4" />,
+    React: <Code2 className="w-4 h-4" />,
+    "Node.js": <Database className="w-4 h-4" />,
+    Express: <Database className="w-4 h-4" />,
+    MySQL: <Database className="w-4 h-4" />,
+    PostgreSQL: <Database className="w-4 h-4" />,
+    "C++": <Cpu className="w-4 h-4" />,
+    "Tailwind CSS": <Leaf className="w-4 h-4" />,
+    Git: <Code2 className="w-4 h-4" />,
+  };
+
   return (
     <div className="bg-background text-foreground">
+      {/* Blur Overlay - Top */}
+      <div
+        className={`fixed top-0 left-0 right-0 h-32 pointer-events-none transition-opacity duration-300 z-40 ${
+          !isWindowFocused ? "opacity-100" : "opacity-0"
+        }`}
+        style={{
+          background: "linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent)",
+          backdropFilter: !isWindowFocused ? "blur(8px)" : "blur(0px)",
+        }}
+      />
+
+      {/* Blur Overlay - Bottom */}
+      <div
+        className={`fixed bottom-0 left-0 right-0 h-32 pointer-events-none transition-opacity duration-300 z-40 ${
+          !isWindowFocused ? "opacity-100" : "opacity-0"
+        }`}
+        style={{
+          background: "linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent)",
+          backdropFilter: !isWindowFocused ? "blur(8px)" : "blur(0px)",
+        }}
+      />
+
       {/* Header */}
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -111,12 +192,7 @@ export default function Index() {
                 <Moon className="w-5 h-5" />
               )}
             </button>
-            <a
-              href="#"
-              className="px-4 py-2 border border-accent text-accent hover:bg-accent hover:text-accent-foreground rounded transition-colors text-sm font-medium"
-            >
-              Resume
-            </a>
+
           </div>
           {/* Mobile dark mode toggle */}
           <button
@@ -150,8 +226,9 @@ export default function Index() {
             </h2>
             <p className="max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed pt-4">
               I'm a full-stack developer passionate about creating beautiful and
-              functional web applications. Currently focused on full-stack
-              development with React, Node.js, and modern web technologies.
+              functional web and desktop applications. Currently focused on
+              full-stack development with React, Node.js, and modern web
+              technologies.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-8">
               <button
@@ -187,8 +264,9 @@ export default function Index() {
               <p className="text-muted-foreground leading-relaxed">
                 Hello! I'm a full-stack developer with a passion for creating
                 beautiful and functional web applications. My interest in web
-                development started in 2019, and since then I've had the
-                privilege of working at startups and tech companies.
+                development started in 2023, and since then I've had the
+                privilege of working at Business Process Outsourcing and Tech
+                Companies.
               </p>
 
               <p className="text-muted-foreground leading-relaxed">
@@ -207,8 +285,9 @@ export default function Index() {
                 {skills.map((skill) => (
                   <div
                     key={skill}
-                    className="flex items-center text-muted-foreground before:content-['▸'] before:text-accent before:mr-3 before:text-lg"
+                    className="flex items-center gap-2 text-muted-foreground"
                   >
+                    <span className="text-accent">{skillIcons[skill]}</span>
                     {skill}
                   </div>
                 ))}
@@ -220,7 +299,7 @@ export default function Index() {
                 <img
                   src="https://cdn.builder.io/api/v1/image/assets%2F458bc5ee9abe4ac0a100b512a7fa3aaa%2F55ea529b172a40d0a44be3c5bab8f31e"
                   alt="Profile"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover media-zoom"
                 />
               </div>
             </div>
@@ -235,68 +314,81 @@ export default function Index() {
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold mb-16 text-primary">
-            <span className="text-accent">02.</span> Work
+            <span className="text-accent">02.</span> Work & Experience's
           </h2>
 
           <div className="space-y-20">
             {projects.map((project, index) => (
               <div key={index} className="space-y-8">
-                {/* Image Slideshow */}
-                <div className="space-y-4">
-                  <div className="relative w-full bg-muted rounded-lg overflow-hidden border border-accent/20">
-                    <img
-                      src={project.images[currentImageIndex]}
-                      alt={`${project.title} - Screenshot ${currentImageIndex + 1}`}
-                      className="w-full h-auto object-cover"
-                    />
-
-                    {/* Slideshow Controls */}
-                    <div className="absolute bottom-4 left-0 right-0 flex items-center justify-center gap-2">
-                      <button
-                        onClick={() =>
-                          setCurrentImageIndex(
-                            currentImageIndex === 0
-                              ? project.images.length - 1
-                              : currentImageIndex - 1,
-                          )
-                        }
-                        className="px-3 py-1 bg-accent/80 hover:bg-accent text-accent-foreground rounded text-sm font-medium transition-colors"
-                      >
-                        ← Previous
-                      </button>
-                      <div className="flex gap-2">
-                        {project.images.map((_, imgIndex) => (
-                          <button
-                            key={imgIndex}
-                            onClick={() => setCurrentImageIndex(imgIndex)}
-                            className={`w-2 h-2 rounded-full transition-all ${
-                              imgIndex === currentImageIndex
-                                ? "bg-accent w-6"
-                                : "bg-accent/50 hover:bg-accent/70"
-                            }`}
+                {/* Media Section - Image Slideshow or Video */}
+                {(project.video || project.images) && (
+                  <div className="space-y-4">
+                    <div className="relative w-full bg-muted rounded-lg overflow-hidden border border-accent/20">
+                      {project.video ? (
+                        <video
+                          src={project.video}
+                          className="w-full h-auto object-cover media-zoom"
+                          controls
+                          muted
+                        />
+                      ) : (
+                        <>
+                          <img
+                            src={project.images[currentImageIndex]}
+                            alt={`${project.title} - Screenshot ${currentImageIndex + 1}`}
+                            className="w-full h-auto object-cover media-zoom"
                           />
-                        ))}
-                      </div>
-                      <button
-                        onClick={() =>
-                          setCurrentImageIndex(
-                            currentImageIndex === project.images.length - 1
-                              ? 0
-                              : currentImageIndex + 1,
-                          )
-                        }
-                        className="px-3 py-1 bg-accent/80 hover:bg-accent text-accent-foreground rounded text-sm font-medium transition-colors"
-                      >
-                        Next →
-                      </button>
-                    </div>
 
-                    {/* Image Counter */}
-                    <div className="absolute top-4 right-4 bg-background/80 backdrop-blur-sm text-foreground px-3 py-1 rounded text-sm font-medium">
-                      {currentImageIndex + 1} / {project.images.length}
+                          {/* Slideshow Controls */}
+                          <div className="absolute bottom-4 left-0 right-0 flex items-center justify-center gap-2">
+                            <button
+                              onClick={() =>
+                                setCurrentImageIndex(
+                                  currentImageIndex === 0
+                                    ? project.images.length - 1
+                                    : currentImageIndex - 1,
+                                )
+                              }
+                              className="px-3 py-1 bg-accent/80 hover:bg-accent text-accent-foreground rounded text-sm font-medium transition-colors"
+                            >
+                              ← Previous
+                            </button>
+                            <div className="flex gap-2">
+                              {project.images.map((_, imgIndex) => (
+                                <button
+                                  key={imgIndex}
+                                  onClick={() => setCurrentImageIndex(imgIndex)}
+                                  className={`w-2 h-2 rounded-full transition-all ${
+                                    imgIndex === currentImageIndex
+                                      ? "bg-accent w-6"
+                                      : "bg-accent/50 hover:bg-accent/70"
+                                  }`}
+                                />
+                              ))}
+                            </div>
+                            <button
+                              onClick={() =>
+                                setCurrentImageIndex(
+                                  currentImageIndex === project.images.length - 1
+                                    ? 0
+                                    : currentImageIndex + 1,
+                                )
+                              }
+                              className="px-3 py-1 bg-accent/80 hover:bg-accent text-accent-foreground rounded text-sm font-medium transition-colors"
+                            >
+                              Next →
+                            </button>
+                          </div>
+
+                          {/* Image Counter */}
+                          <div className="absolute top-4 right-4 bg-background/80 backdrop-blur-sm text-foreground px-3 py-1 rounded text-sm font-medium">
+                            {currentImageIndex + 1} / {project.images.length}
+                          </div>
+                        </>
+                      )}
                     </div>
                   </div>
-                </div>
+                )}
 
                 {/* Project Details */}
                 <div className="space-y-4">
@@ -317,15 +409,32 @@ export default function Index() {
                     ))}
                   </div>
                   <div className="flex gap-6 pt-4">
+                    {index === 0 && (
+                      <>
+                        <a
+                          href="https://youtu.be/XdK7nYHkymE"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors font-medium group"
+                        >
+                          System Demo
+                          <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </a>
+                        <a
+                          href="https://alphafitnesscenter.vercel.app/services"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors font-medium group"
+                        >
+                          Website Link
+                          <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </a>
+                      </>
+                    )}
                     <a
-                      href="#"
-                      className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors font-medium group"
-                    >
-                      Live Site
-                      <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </a>
-                    <a
-                      href="#"
+                      href={project.github || "https://github.com/Kiro2-3?tab=overview&from=2026-01-01&to=2026-01-29"}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors font-medium group"
                     >
                       GitHub
@@ -357,17 +466,12 @@ export default function Index() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="mailto:hello@example.com"
+              href="mailto:rockypenamantejr23@gmail.com"
+              target="_blank"
               className="inline-flex items-center gap-2 px-8 py-3 bg-accent text-accent-foreground hover:bg-accent/90 rounded transition-colors font-medium"
             >
               <Mail className="w-5 h-5" />
               Send me an email
-            </a>
-            <a
-              href="#"
-              className="px-8 py-3 border border-accent text-accent hover:bg-accent hover:text-accent-foreground rounded transition-colors font-medium"
-            >
-              Download Resume
             </a>
           </div>
 
@@ -383,16 +487,7 @@ export default function Index() {
               <Github className="w-6 h-6" />
             </a>
             <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-accent transition-colors"
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="w-6 h-6" />
-            </a>
-            <a
-              href="mailto:hello@example.com"
+              href="mailto:rockypenamantejr23@gmail.com"
               className="text-muted-foreground hover:text-accent transition-colors"
               aria-label="Email"
             >
@@ -406,7 +501,7 @@ export default function Index() {
       <footer className="relative w-full border-t border-border py-12 bg-muted/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-muted-foreground text-sm">
-            Designed & Built by Brittany Chiang | Built with React, Vite &
+            Designed & Built by Penamante Rocky | Built with React, Vite &
             Tailwind CSS
           </p>
         </div>

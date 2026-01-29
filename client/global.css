@@ -13,22 +13,22 @@
   */
   :root {
     --background: 200 20% 98%;
-    --foreground: 210 15% 15%;
+    --foreground: 210 15% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 15% 15%;
+    --card-foreground: 210 15% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 15% 15%;
+    --popover-foreground: 210 15% 12%;
 
-    --primary: 210 15% 15%;
+    --primary: 210 15% 12%;
     --primary-foreground: 200 20% 98%;
 
     --secondary: 170 60% 45%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 210 15% 35%;
-    --muted-foreground: 210 15% 65%;
+    --muted-foreground: 210 15% 35%;
 
     --accent: 170 60% 45%;
     --accent-foreground: 0 0% 100%;
@@ -141,5 +141,25 @@
 
   .link-underline:hover::after {
     @apply w-full;
+  }
+
+  .media-zoom {
+    @apply transition-transform duration-300 ease-out cursor-pointer;
+  }
+
+  .media-zoom:hover {
+    @apply scale-105;
+  }
+
+  .blur-overlay {
+    @apply fixed pointer-events-none transition-opacity duration-300;
+  }
+
+  .blur-overlay-top {
+    @apply top-0 left-0 right-0 h-32 z-40;
+  }
+
+  .blur-overlay-bottom {
+    @apply bottom-0 left-0 right-0 h-32 z-40;
   }
 }
