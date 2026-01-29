@@ -65,8 +65,9 @@ export default function Index() {
     {
       title: "C++ First Year Final Project",
       description:
-        "This system is made with C++ only alone.",
+        "This system is made with C++ only.",
       tags: ["C++"],
+      video: "https://cdn.builder.io/o/assets%2Fd0b7126990a54b5caf24622e30c00bac%2Fcb6630cd4e2e4d4e9572fde1a3603984?alt=media&token=74192056-4437-4d04-8f94-2c8289effbf6&apiKey=d0b7126990a54b5caf24622e30c00bac",
       github: "https://github.com/Kiro2-3/Project-C-Solo-d/commit/a074c6170bbcc9f8dacd68bb4b219e6690bfc523",
     },
   ];
