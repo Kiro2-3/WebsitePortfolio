@@ -63,6 +63,14 @@ export default function Index() {
       github: "https://github.com/Kiro2-3/CDM-Payroll-System",
     },
     {
+      title: "Magenta Gamex",
+      description:
+        "A static website with Html and Css only.",
+      tags: ["HTML", "CSS"],
+      video: "https://cdn.builder.io/o/assets%2Fd0b7126990a54b5caf24622e30c00bac%2F3bf29a3aeeed417d9b1cd6ece846b06b?alt=media&token=2808f43f-6655-4fc8-9615-034fc95c2840&apiKey=d0b7126990a54b5caf24622e30c00bac",
+      github: "https://github.com/Kiro2-3/Magenta-Gamex",
+    },
+    {
       title: "C++ First Year Final Project",
       description:
         "This system is made with C++ only.",
